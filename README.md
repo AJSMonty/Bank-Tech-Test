@@ -22,16 +22,16 @@ This is a tech test to simulate simple transactions from a bank account
 
 An example of a full use:
 
-•bank = Bank.new
-•bank.deposit(3000)
-•bank.withdraw(222)
-•bank.withdraw(430)
-•bank.deposit(2000)
-•bank.deposit(1000)
-•bank.withdraw(15)
-•bank.withdraw(500)
-•bank.print_transactions
-•exit
+* bank = Bank.new
+* bank.deposit(3000)
+* bank.withdraw(222)
+* bank.withdraw(430)
+* bank.deposit(2000)
+* bank.deposit(1000)
+* bank.withdraw(15)
+* bank.withdraw(500)
+* bank.print_transactions
+* exit
 
 ## Why this way?
 
