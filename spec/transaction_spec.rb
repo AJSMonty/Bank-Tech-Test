@@ -6,10 +6,6 @@ describe 'transaction' do
         allow(@transaction).to receive(:date) {'12/02/21'}
     end
 
-    it 'is an instance of transaction' do
-        expect(@transaction).to be_instance_of Transaction
-    end
-
     it 'instance initializes with date' do
         expect(@transaction.date).to eq '12/02/21'
     end

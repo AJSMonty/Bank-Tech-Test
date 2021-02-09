@@ -8,7 +8,7 @@ class Bank
 
   def initialize
     @balance = 0
-    @transactions = TransactionList.new
+    @transactions = TransactionList.new 
   end
 
   def deposit(amount)
@@ -27,8 +27,10 @@ class Bank
 
   private
 
-  def add_to_transactions(credit: '', debit: '')
+  def add_to_transactions(credit: '', debit: '') 
+    # takes either argument and creates a new Transaction instance
     transaction = Transaction.new(credit: credit, debit: debit, balance: @balance)
+    # then calls the add method on TransactionList instance 
     @transactions.add(transaction)
   end
 

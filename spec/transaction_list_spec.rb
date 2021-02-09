@@ -6,20 +6,6 @@ describe 'transaction_list' do
         @transaction_list = TransactionList.new
     end
 
-    it 'is an instance of transaction' do
-        expect(@transaction_list).to be_instance_of TransactionList
-    end
-
-    it 'initializes with an empty array' do
-        expect(@transaction_list.transaction_list).to eq []
-    end
-
-    it 'has a method called add that adds a transaction to the array' do
-        transaction = Transaction.new
-        @transaction_list.add(transaction)
-        expect(@transaction_list.transaction_list[0]).to be_instance_of Transaction
-    end
-
     it 'can print a list of transactions with format' do
         transaction = Transaction.new(credit: 2000, balance: 2000)
         allow(transaction).to receive(:date) {'12/02/21'}
