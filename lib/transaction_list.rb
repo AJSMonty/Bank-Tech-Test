@@ -13,7 +13,9 @@ class TransactionList
     def print
         puts 'date||credit||debit||balance'
         # puts all transactions in reverse order
-        @transaction_list.reverse.each { |transaction| puts "#{transaction.date}||#{transaction.credit}||#{transaction.debit}||#{transaction.balance}" }
+        @transaction_list.reverse.each do |trans| 
+            puts "#{trans.date}||#{trans.credit}||#{trans.debit}||#{trans.balance}"
+        end
     end
 
 end
