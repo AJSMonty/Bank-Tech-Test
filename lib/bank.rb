@@ -1,39 +1,35 @@
 # frozen_string_literal: true
 
+require './lib/transaction'
+require './lib/transaction_list'
+
 class Bank
-  attr_reader :balance, :transactions
+  attr_reader :balance
 
   def initialize
     @balance = 0
-    @transactions = []
+    @transactions = TransactionList.new
   end
 
-  def deposit(date:, credit_amount:)
-    # adds to balance
-    @balance += credit_amount
-    # then calls add_to_transactions to save state
-    add_to_transactions(date: date, credit_amount: credit_amount)
+  def deposit(amount)
+    @balance += amount
+    add_to_transactions(credit: amount)
   end
 
-  def withdraw(date:, debit_amount:)
-    # removes from balance
-    @balance -= debit_amount
-    # then calls add_to_transactions to save state
-    add_to_transactions(date: date, debit_amount: debit_amount)
+  def withdraw(amount)
+    @balance -= amount
+    add_to_transactions(debit: amount)
   end
 
   def print_transactions
-    # defines the columns in the method rather than having the first index of the array set to:
-    puts '  date  ||  credit  ||  debit  ||  balance'
-    # puts all transactions in reverse order
-    @transactions.reverse.each { |transaction| puts transaction }
+    @transactions.print
   end
 
   private
 
-  # added spacing for command line formatting (works best with 4 digit numbers)
-  # this method adds the transaction with date to transactions array
-  def add_to_transactions(date:, credit_amount: '    ', debit_amount: '    ')
-    @transactions << "#{date}||   #{credit_amount}   ||   #{debit_amount}  ||  #{@balance}"
+  def add_to_transactions(credit: '', debit: '')
+    transaction = Transaction.new(credit: credit, debit: debit, balance: @balance)
+    @transactions.add(transaction)
   end
+
 end

@@ -6,6 +6,7 @@ This is a tech test to simulate simple transactions from a bank account
 
 * clone into repository
 * run bundle install
+* to run tests run rspec
 * open irb (irb -r './lib/bank.rb')
 
 ## How to use
@@ -18,6 +19,19 @@ This is a tech test to simulate simple transactions from a bank account
 * To withdraw from account do: name_of_account.withdraw(date: , debit_amount: )
   * Same rules apply as above
 * To see all transactions do: name_of_account.print_transactions
+
+An example of a full use:
+
+•bank = Bank.new
+•bank.deposit(3000)
+•bank.withdraw(222)
+•bank.withdraw(430)
+•bank.deposit(2000)
+•bank.deposit(1000)
+•bank.withdraw(15)
+•bank.withdraw(500)
+•bank.print_transactions
+•exit
 
 ## Why this way?
 
