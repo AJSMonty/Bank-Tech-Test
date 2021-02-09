@@ -36,5 +36,3 @@ An example of a full use:
 ## Why this way?
 
 The reason I have structured my code this way was to try to reduce responsibility of any one method. I also wanted to hide the method to add_to_transactions as this would cause a bug if it was able to be accessed externally. The three methods that are externally available are the only methods needed to implement the functionality.
-
-I have formatted the transactions so that they better line up on the command line, but I am aware that within the code it doesn't look that great. However when dealing with 4 digit deposits and withdrawals, I think the print_transactions method looks nicer with this formatting.
